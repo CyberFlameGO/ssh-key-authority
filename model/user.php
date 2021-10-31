@@ -348,11 +348,11 @@ class User extends Entity {
 				}
 				if(isset($memberships[$syncgroup])) {
 					if($syncgroup == $config['ldap']['admin_group_cn']) $this->admin = 1;
-					if(!$user->member_of($sysgrp)) {
+					if(!$this->member_of($sysgrp)) {
 						$group->add_member($this);
 					}
 				} else {
-					if($user->member_of($sysgrp)) {
+					if($this->member_of($sysgrp)) {
 						$group->delete_member($this);
 					}
 				}
