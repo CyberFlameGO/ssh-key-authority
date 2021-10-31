@@ -298,7 +298,7 @@ class User extends Entity {
 	* @throws UserNotFoundException if the user is not found in LDAP
 	*/
 	public function get_details_from_ldap() {
-		global $config;
+		global $config, $group_dir;
 		$attributes = array();
 		$attributes[] = 'dn';
 		$attributes[] = $config['ldap']['user_id'];
